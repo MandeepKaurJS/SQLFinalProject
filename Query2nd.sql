@@ -6,8 +6,10 @@ as
 Begin
 	/***How many copies of the book titled "The Lost Tribe"
  are owned by each library branch****/
- select number_of_copies,BranchName from Book_copies
+ select count(Titles) as Title,BranchName from Book_copies
 inner join Library_Branch  on Book_copies.Branch_id=
-Library_Branch.BranchID where number_of_copies='The Lost Tribe'
+Library_Branch.BranchID where Titles='The Lost Tribe'
+group by BranchName
 end
+Go
 execute[dbo].[GetCopiesofbooks]

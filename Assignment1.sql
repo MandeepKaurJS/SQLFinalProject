@@ -11,7 +11,7 @@ are owned by the library branch whose name is "Sharpstown" ****/
 select COUNT(Titles)as Title,BranchName from Book_copies
 	inner join Library_Branch on Book_copies.Branch_id=
 	Library_Branch.BranchID
-	where Titles='The Lost Tribe' and Branch_id=2
+	where BranchName='SharpsTown' and Titles='The Lost Tribe'
 	group by BranchName
 end
 
