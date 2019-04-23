@@ -103,10 +103,12 @@ Go
   Create Table Book_copies
   (Book_ID int foreign key references Books(BookID) on update  cascade on delete cascade,
   Branch_id int foreign key references Library_Branch(BranchID) on update cascade on delete cascade,
-  number_of_copies varchar(100));
- /** sp_rename 'Book_copies.number_of_copies','Titles','COLUMN'; **/
+  Titles varchar(100));
+ 
+ /*** sp_rename 'Book_copies.number_of_copies','Titles','COLUMN'; **/
+  
   Insert into Book_Copies
-(Book_ID,Branch_id,number_Of_Copies)
+(Book_ID,Branch_id,Titles)
 values
 (100,1,'To kill a Mockingbird'),
 (100,2,'To kill a Mockingbird'),

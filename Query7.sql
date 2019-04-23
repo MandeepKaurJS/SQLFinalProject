@@ -7,7 +7,7 @@ Begin
 	/*******For each book authored (or co-authored) by "Stephen King", 
 	retrieve the title and the number of copies owned by
 	 the library branch whose name is "Central". *******/
-	 select name.AuthorName,id.BookID,count(Titles) as copies
+	 select name.AuthorName,id.BookID,count(Titles) as NumOfCopies
 	,Branch.BranchName
 	from Book_copies copies
 		inner join Book_Authors name on copies.Book_ID=name.Book_ID
