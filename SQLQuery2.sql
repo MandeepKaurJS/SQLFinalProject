@@ -47,8 +47,18 @@ select b1.BranchName ,COUNT(*)as numberOfBooksOUt from
 	inner join Library_Branch b1 on b1.Branchid=b2.BranchID
 	GROUP BY
 	b1.BranchName
-
-
+/**********Retrieve the names, addresses, and the number of books 
+checked out for all borrowers who have more than five books checked out.***/
+	select count(Borrower_name) as borrower,B_address, number_of_copies from 
+	(Book_loans
+		inner join Borrower on Book_loans.Book_CardNo=
+		Borrower.CardNo
+		inner join Book_copies on Book_loans.BookID=
+		Book_copies.Book_ID)
+		group by B_Address,number_of_copies
+		having COUNT(Borrower_name)>5
+		  
+select * from Book_loans;
 /*******For each book authored (or co-authored) by "Stephen King", 
 retrieve the title and the number of copies owned by
  the library branch whose name is "Central". *******/

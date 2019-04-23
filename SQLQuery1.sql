@@ -13,10 +13,11 @@ Go
  ('Local','Auburn'),
  ('City','Algona');
 
+ Go
  Select * from Library_Branch;
 
  /*****End of Table*****/
- Go
+
  /*****Start of Table Publish****/
 
  create table Publisher
@@ -34,7 +35,7 @@ Go
  ('DiggyPod_5','Auburn','234-456-7659');
 
  /*************End of Table*************/
- Go
+ 
  /*******Start of Boooks table*****/
 
  create table Books
@@ -66,11 +67,11 @@ values
 ('Pride and Prejudice','DiggyPod_3'),
 ('The Odyssey','DiggyPod_1');
 
-
+Go
   select * from books;
 
   /*****End of Table******/
-  Go
+
  /*********Start Book Authors Table*****/
 
   create table Book_Authors
@@ -93,9 +94,11 @@ values
   (110,'Stephen King'),
   (111,'McCharthy');
 
+
+  Go
   select * from Book_Authors;
 /*****End Table ******/
-  Go
+ 
   /************Start Table **********/
   Create Table Book_copies
   (Book_ID int foreign key references Books(BookID) on update  cascade on delete cascade,
@@ -149,9 +152,9 @@ values
 (113,3,'The Catcher in the Rye'),
 (114,2,'The Chronicles of Narnia');
 
+Go
 select * from Book_copies;
 /*****End of table***/
-Go
 /****Start of Table Borrower****/
 
 create Table Borrower
@@ -173,9 +176,11 @@ values
 (1223345432111244,'Paaro','Sea Tac','345-654-6754'),
 (233445555555554,'Liza','LakeLand','321-123-1234'),
 (2345364523726419,'Nancy','Auburn','234-567-0987');
+ 
+ Go
  Select * from Borrower;
 /****End OF Table****/
-Go
+
 /*****Books Loan table ****/
 Create Table Book_loans
 (BookID int foreign key references Books(BookID) on update  cascade on delete cascade,
@@ -221,6 +226,8 @@ insert into Book_loans
 (102,1,2345364523732343,'2018-12-12','2018-12-30'),
 (103,1,2345364523732343,'2018-12-12','2018-12-30'),
 (104,1,2345364523732343,'2018-12-12','2018-12-30');
+
+Go
 select * from Book_loans;
 
 /***********End of All Tables*****/

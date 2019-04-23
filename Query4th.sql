@@ -17,4 +17,5 @@ select book1.Branchid,b2.BranchName,b1.BookTitle,n1.Borrower_name,n1.B_address
 		n1.CardNo
 		where BranchName='Sharpstown' and DateDue='2019-04-20'
 end
+Go
 execute[dbo].[GetDueDate]

@@ -12,4 +12,6 @@ select b1.BranchName ,COUNT(*)as numberOfBooksOUt from
 	GROUP BY
 	b1.BranchName
 end
+
+Go
 execute[dbo].[CountBooks]
